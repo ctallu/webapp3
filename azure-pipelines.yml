@@ -5,9 +5,22 @@
 
 trigger:
 - master
-
 pool:
   vmImage: ubuntu-latest
+
+# pipelines>Stages>Jobs >Task(Steps)
+jobs:
+-job:job1
+steps:
+-script:
+  echo Add task1
+  displayName:'RUn Taskl1 display'
+
+  -job:job2
+steps:
+-script:
+  echo Add task2
+  displayName:'RUn Task2 display'
 
 steps:
 - script: echo Hello, world!
