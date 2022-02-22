@@ -23,5 +23,7 @@ stages:
 
     - job: Job2
       steps:
-      - script: echo job2, world!
+      - script: "
+      echo job2, world!
+      echo job21, world!"
       displayName: Run a one-line script
