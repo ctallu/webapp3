@@ -27,3 +27,18 @@ stages:
       echo job2, world!
       echo job21, world!"
       displayName: Run a one-line script
+
+  - stage: BuildsApp1
+    displayName: 'Run a one-line script'
+    jobs:
+    - job: Job21
+      steps:
+      - script: echo Job1, world!
+      displayName: Run a one-line script
+
+    - job: Job22
+      steps:
+      - script: "
+      echo job21, world!
+      echo job23, world!"
+      displayName: Run a one-line script
