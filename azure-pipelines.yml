@@ -13,7 +13,7 @@ pool:
 
 # Pipelines > Stages > Jobs > Task(steps)
   stages:
-    stage: BuildsApp 
+  - stage: BuildsApp 
     jobs:
     - job:Job1
     steps:
