@@ -12,22 +12,11 @@ pool:
 
 
 # Pipelines > Stages > Jobs > Task(steps)
-  stages:
+stages:
   - stage: BuildsApp 
+    displayName: 'Run a one-line script'
     jobs:
-    - job:Job1
-    steps:
-    - script: echo Hello, world!
-      displayName: 'Run a one-line script'
-
-    - script: |
-        echo Add other tasks to build, test, and deploy your project.
-        echo See https://aka.ms/yaml
-      displayName: 'Run a multi-line script'
-    
-
-      jobs:
-      - job:Job2
+    - job: Job1
       steps:
       - script: echo Hello, world!
-        displayName: 'Run a one-line script'
+      displayName: Run a one-line script
