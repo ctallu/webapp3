@@ -17,6 +17,7 @@ stages:
     displayName: 'Run a one-line script'
     jobs:
     - job: Job1
+      dependsOn: Job2
       steps:
       - script: echo Job1, world!
       displayName: Run a one-line script
