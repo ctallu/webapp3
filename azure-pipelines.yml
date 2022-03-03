@@ -19,14 +19,17 @@ stages:
     - job: Job1
       dependsOn: Job2
       steps:
-      - script: echo Job1, world!
+      - script: echo Job1,$(EnvVariable) world!
       displayName: Run a one-line script
 
     - job: Job2
+      variables: 
+       Joblevelvariable: Joblevelveraiblevalue
       steps:
       - script: "
       echo job2, world!
       echo job21, world!"
+      - bash: echo 
       displayName: Run a one-line script
 
   - stage: DEVBUILD
