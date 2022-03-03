@@ -29,7 +29,7 @@ stages:
       - script: "
       echo job2, world!
       echo job21, world!"
-      - bash: echo 
+      - bash: echo $(Joblevelvariable)
       displayName: Run a one-line script
 
   - stage: DEVBUILD
