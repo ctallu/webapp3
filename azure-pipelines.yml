@@ -43,8 +43,7 @@ stages:
       echo job21, world!
       echo job23, world!"
       displayName: Run a one-line script
-      cancelTimeoutInMinutes: 
-      condition: 
+      
 
   - stage: PRODBUILD
     displayName: 'Run a one-line script'
