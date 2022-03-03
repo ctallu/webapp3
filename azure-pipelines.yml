@@ -19,7 +19,7 @@ stages:
     - job: Job1
       dependsOn: Job2
       steps:
-      - script: echo Job1,$(EnvVariable) world!
+      - script: echo Job1,$(PipelineLevelVariable) world!
       displayName: Run a one-line script
 
     - job: Job2
