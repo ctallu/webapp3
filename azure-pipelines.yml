@@ -14,7 +14,7 @@ pool:
 # Pipelines > Stages > Jobs > Task(steps)
 stages:
   - stage: BuildsApp 
-    displayName: 'Run a one-line script'
+    displayName: 'Run a BuildsApp'
     jobs:
     - job: Job1
       dependsOn: Job2
@@ -30,7 +30,7 @@ stages:
       displayName: Run a one-line script
 
   - stage: DEVBUILD
-    displayName: 'Run a one-line script'
+    displayName: 'Run DEVBUILD'
     jobs:
     - job: Job21
       steps:
@@ -46,7 +46,7 @@ stages:
       
 
   - stage: PRODBUILD
-    displayName: 'Run a one-line script'
+    displayName: 'Run PRODBUILD'
     dependsOn: 
     - BuildsApp    
     - DEVBUILD    
