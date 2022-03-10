@@ -27,8 +27,21 @@ stages:
       - bash:   echo DefaultWorkingDirectory - $(System.DefaultWorkingDirectory)
       - bash:   ls -R $(System.DefaultWorkingDirectory)
       - bash:   echo ArtifactStagingDirectory - $(Build.ArtifactStagingDirectory)
+      - bash:   java -version
+      - bash:   node --version
+      - bash:   python --version
+      - bash:   mvn -version
+      - bash:   ls -R $(Build.ArtifactStagingDirectory)
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: '$(System.DefaultWorkingDirectory)'
+          Contents: |
+            **/*.yaml
+            **/*.tf
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      - bash:   ls -R $(Build.ArtifactStagingDirectory)
       displayName: Run a one-line script
-
+     
     - job: Job2
       variables: 
        Joblevelvariable: Joblevelveraiblevalue
