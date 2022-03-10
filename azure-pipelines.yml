@@ -40,6 +40,11 @@ stages:
             **/*.cs
           TargetFolder: '$(Build.ArtifactStagingDirectory)'
       - bash:   ls -R $(Build.ArtifactStagingDirectory)
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'PublishBuildArtifacts1'
+          publishLocation: 'Container'
       displayName: Run a one-line script
      
     - job: Job2
