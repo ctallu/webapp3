@@ -20,6 +20,13 @@ stages:
       dependsOn: Job2
       steps:
       - script: echo Job1,$(PipelineLevelVariable) world!
+      - bash:   echo Build Firstjob
+      - bash:   echo $(Build.Build)
+      - bash:   echo $(Build.SourceBranchName)
+      - bash:   echo $(Build.SourcesDirectory)
+      - bash:   echo $(System.DefaultWorkingDirectory)
+      - bash:   ls -R $(System.DefaultWorkingDirectory)
+      - bash:   echo $(System.ArtifactStagingDirectory)
       displayName: Run a one-line script
 
     - job: Job2
