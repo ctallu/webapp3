@@ -21,12 +21,12 @@ stages:
       steps:
       - script: echo Job1,$(PipelineLevelVariable) world!
       - bash:   echo Build Firstjob
-      - bash:   echo $(Build.Build)
-      - bash:   echo $(Build.SourceBranchName)
-      - bash:   echo $(Build.SourcesDirectory)
-      - bash:   echo $(System.DefaultWorkingDirectory)
+      - bash:   echo BuildNumber - $(Build.BuildNumber)
+      - bash:   echo SourceBranchName - $(Build.SourceBranchName)
+      - bash:   echo SourcesDirectory - $(Build.SourcesDirectory)
+      - bash:   echo DefaultWorkingDirectory - $(System.DefaultWorkingDirectory)
       - bash:   ls -R $(System.DefaultWorkingDirectory)
-      - bash:   echo $(System.ArtifactStagingDirectory)
+      - bash:   echo ArtifactStagingDirectory - $(System.ArtifactStagingDirectory)
       displayName: Run a one-line script
 
     - job: Job2
