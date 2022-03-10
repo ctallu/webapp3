@@ -36,8 +36,8 @@ stages:
         inputs:
           SourceFolder: '$(System.DefaultWorkingDirectory)'
           Contents: |
-            **/*.yaml
-            **/*.tf
+            **/*.yml
+            **/*.cs
           TargetFolder: '$(Build.ArtifactStagingDirectory)'
       - bash:   ls -R $(Build.ArtifactStagingDirectory)
       displayName: Run a one-line script
