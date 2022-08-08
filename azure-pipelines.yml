@@ -65,28 +65,35 @@ stages:
       - script: echo Job1, world!
       displayName: Run a one-line script
 
-    - job: Job22
-      steps:
-      - script: "
-      echo job21, world!
-      echo job23, world!"
+ #deploment is same as Job 
+    - deployment: DevDepJob  
+      environment: DevENV
+      strategy:
+       runOnce:
+         deploy:
+          steps:
+             - script: echo DevDepJob
       displayName: Run a one-line script
       
 
   - stage: PRODBUILD
     displayName: 'Run PRODBUILD'
+  
     dependsOn: 
     - BuildsApp    
     - DEVBUILD    
-    jobs:
-    - job: Job21
+    jobs:    
+    - job: Job21    
       steps:
       - script: echo Job1, world!
       displayName: Run a one-line script
-
-    - job: Job22
-      steps:
-      - script: "
-      echo job21, world!
-      echo job23, world!"
+  #deploment is same as Job 
+    - deployment: ProdDepJob  
+      environment: PRODENV
+      strategy:
+       runOnce:
+         deploy:
+          steps:
+             - script: echo DevDepJob
       displayName: Run a one-line script
+           
